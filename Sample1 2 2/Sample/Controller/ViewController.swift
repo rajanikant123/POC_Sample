@@ -8,70 +8,144 @@
 
 import UIKit
 
-class ViewController: UIViewController,UICollectionViewDelegateFlowLayout {
 
+class ViewController: UIViewController {
+    
+    
+    /**
+     Properties.
+     */
+    
+    static let annotationPadding: CGFloat = 4
+    
     var refresher:UIRefreshControl = UIRefreshControl()
-    @IBOutlet var lblTitle: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
     var model : Model?
     var viewModel : ViewModel = ViewModel()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView.dataSource = self
     
-        setUpData()
+    
+    var listCollectionView : UICollectionView?
+    
+    
+    var titleLbl: UILabel = {
         
-        // Do any additional setup after loading the view, typically from a nib.
+        let label = UILabel()
+        label.text = "Loading"
+        label.textAlignment = NSTextAlignment.center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20)
+        return label
+    }()
+    
+    
+    
+    private var _imageView: UIImageView?
+    public var imageView: UIImageView {
+        get {
+            if let imageView = _imageView {
+                return imageView
+            }
+            let imageView = UIImageView(frame: roundedCornersView.bounds)
+            _imageView = imageView
+            
+            roundedCornersView.addSubview(imageView)
+            imageView.contentMode = .scaleAspectFit
+            
+            return imageView
+        }
     }
+    
+    private var _descriptionLabel: UILabel?
+    public var descriptionLabel: UILabel {
+        get {
+            if let descriptionLabel = _descriptionLabel {
+                return descriptionLabel
+            }
+            let descriptionLabel = UILabel()
+            _descriptionLabel = descriptionLabel
+            
+            roundedCornersView.addSubview(descriptionLabel)
+            
+            descriptionLabel.numberOfLines = 0
+            descriptionLabel.font = UIFont.defaultFont
+            
+            return descriptionLabel
+        }
+    }
+    
+    
+    
+    private var _roundedCornersView: UIView?
+    public var roundedCornersView: UIView {
+        get {
+            if let roundedCornersView = _roundedCornersView {
+                return roundedCornersView
+            }
+            let roundedCornersView = UIView(frame: self.view.bounds)
+            _roundedCornersView = roundedCornersView
+            
+            self.view.addSubview(roundedCornersView)
+            roundedCornersView.addConstraintsAlignedToSuperview()
+            
+            roundedCornersView.clipsToBounds = true
+            roundedCornersView.layer.cornerRadius = 5
+            roundedCornersView.backgroundColor = .white
+            
+            return roundedCornersView
+        }
+    }
+    
+    /**
+     Orinataion change method.
+     */
+    override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        listCollectionView?.collectionViewLayout.invalidateLayout()
+        DispatchQueue.main.async{
+            self.listCollectionView?.reloadData()
+        }
+        
+    }
+    
+    
+    
+    override  func viewDidLoad() {
+        super.viewDidLoad()
+        self.getData()
+        self.setupInitialData()
+    }
+    
+    /**
+     Get list of data.
+     */
+    
     func getData() {
+        
         if Connectivity.isConnectedToInternet() {
             
             self.viewModel.getList {
                 
                 self.model = self.viewModel.model
-                self.lblTitle.text = self.model?.title
-                self.collectionView.reloadData()
+                self.titleLbl.text = self.model?.title
+                self.listCollectionView?.reloadData()
+                self.refresher.endRefreshing()
             }
-        }
-    
-        
-    }
-    
-    
-    func setUpData() {
-       
-        var cellWidth : CGFloat = 0.0
-        var cellheight : CGFloat = 0.0
-        
-        if deviceIdiom == .pad  {
-            cellWidth  = (screenSize.width/4) - 20
-            cellheight = 290
-        }else{
-           
-            cellWidth  = screenSize.width - 10
-            cellheight = 250
+        }else {
+            
+            let alertController = UIAlertController(title: "Alert", message: "The Internet is not available", preferredStyle: .alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alertController, animated: true, completion: nil)
             
         }
-        let cellSize = CGSize(width: cellWidth , height:cellheight)
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = cellSize
-        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        layout.minimumLineSpacing = 1.0
-        layout.minimumInteritemSpacing = 1.0
-        collectionView.setCollectionViewLayout(layout, animated: true)
-        
-        self.refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
-        self.collectionView!.addSubview(refresher)
-        
-        self.getData()
         
     }
     
     @objc func loadData() {
         self.getData()
     }
+    
+    
+    
 }
 

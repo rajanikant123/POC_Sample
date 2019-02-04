@@ -26,9 +26,22 @@ class SampleUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    /**
+     UI  collectionView testCase
+     */
+    
+    
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        
+        
+        let app = XCUIApplication()
+        
+        let collectionView = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .collectionView).element
+        
+        
+                        XCTAssertNotEqual(collectionView.cells.count, 0)
+        
     }
 
 }

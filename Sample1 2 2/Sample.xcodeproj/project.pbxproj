@@ -14,14 +14,17 @@
 		5C683F4121EF234600E54958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C683F3F21EF234600E54958 /* LaunchScreen.storyboard */; };
 		5C683F4C21EF234600E54958 /* SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683F4B21EF234600E54958 /* SampleTests.swift */; };
 		5C683F5721EF234600E54958 /* SampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683F5621EF234600E54958 /* SampleUITests.swift */; };
-		5C683F6621EF24C000E54958 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683F6421EF24C000E54958 /* CustomCollectionCell.swift */; };
-		5C683F6721EF24C000E54958 /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C683F6521EF24C000E54958 /* CustomCollectionCell.xib */; };
 		5C683F6921EF25CF00E54958 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683F6821EF25CF00E54958 /* ViewModel.swift */; };
 		5C683F6B21EF307600E54958 /* VC_Extension+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683F6A21EF307600E54958 /* VC_Extension+DataSource.swift */; };
 		5C683F6D21EF328000E54958 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683F6C21EF328000E54958 /* GlobalConstants.swift */; };
 		5C683F6F21EF475500E54958 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683F6E21EF475500E54958 /* ApiClient.swift */; };
 		7A4A09BA1B28904B0191DF50 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8F1AF731233933C624FD7C /* Pods_SampleTests.framework */; };
 		A164A3925BDE3323D4264B8C /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1447AEE83F0F7403BFC2404D /* Pods_Sample.framework */; };
+		BB2384292208B937003D4762 /* PinterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2384282208B937003D4762 /* PinterestCell.swift */; };
+		BB23842F2208B944003D4762 /* PinterestLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB23842B2208B944003D4762 /* PinterestLayoutAttributes.swift */; };
+		BB2384302208B944003D4762 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB23842C2208B944003D4762 /* PinterestLayout.swift */; };
+		BB2384312208B944003D4762 /* PinterestLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB23842D2208B944003D4762 /* PinterestLayoutDelegate.swift */; };
+		BB2384332208B9C5003D4762 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2384322208B9C5003D4762 /* APITest.swift */; };
 		BB51990C21EFA1E7004C83D4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51990B21EFA1E7004C83D4 /* Model.swift */; };
 		BBFF629C21F3768F00972B9F /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFF629B21F3768F00972B9F /* Connectivity.swift */; };
 		BBFF629E21F377FC00972B9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFF629D21F377FC00972B9F /* Extensions.swift */; };
@@ -62,8 +65,6 @@
 		5C683F5221EF234600E54958 /* SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C683F5621EF234600E54958 /* SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUITests.swift; sourceTree = "<group>"; };
 		5C683F5821EF234600E54958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C683F6421EF24C000E54958 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
-		5C683F6521EF24C000E54958 /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		5C683F6821EF25CF00E54958 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		5C683F6A21EF307600E54958 /* VC_Extension+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC_Extension+DataSource.swift"; sourceTree = "<group>"; };
 		5C683F6C21EF328000E54958 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
@@ -72,6 +73,12 @@
 		75812322AB55F1C6E3A61E0A /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		76DDDBC0E45187C227E8FB51 /* Pods-SampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BB490C5C90E0E1EF402B6A7 /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
+		BB2384282208B937003D4762 /* PinterestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestCell.swift; sourceTree = "<group>"; };
+		BB23842B2208B944003D4762 /* PinterestLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayoutAttributes.swift; sourceTree = "<group>"; };
+		BB23842C2208B944003D4762 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		BB23842D2208B944003D4762 /* PinterestLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayoutDelegate.swift; sourceTree = "<group>"; };
+		BB23842E2208B944003D4762 /* PinterestLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinterestLayout.h; sourceTree = "<group>"; };
+		BB2384322208B9C5003D4762 /* APITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		BB51990B21EFA1E7004C83D4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BBFF629B21F3768F00972B9F /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		BBFF629D21F377FC00972B9F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -167,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				5C683F4B21EF234600E54958 /* SampleTests.swift */,
+				BB2384322208B9C5003D4762 /* APITest.swift */,
 				5C683F4D21EF234600E54958 /* Info.plist */,
 			);
 			path = SampleTests;
@@ -191,11 +199,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB2384272208B92E003D4762 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB2384282208B937003D4762 /* PinterestCell.swift */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		BB23842A2208B944003D4762 /* PinterestLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BB23842B2208B944003D4762 /* PinterestLayoutAttributes.swift */,
+				BB23842C2208B944003D4762 /* PinterestLayout.swift */,
+				BB23842D2208B944003D4762 /* PinterestLayoutDelegate.swift */,
+				BB23842E2208B944003D4762 /* PinterestLayout.h */,
+			);
+			path = PinterestLayout;
+			sourceTree = "<group>";
+		};
 		BBFF629521F357BC00972B9F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C683F6421EF24C000E54958 /* CustomCollectionCell.swift */,
-				5C683F6521EF24C000E54958 /* CustomCollectionCell.xib */,
+				BB23842A2208B944003D4762 /* PinterestLayout */,
+				BB2384272208B92E003D4762 /* CollectionCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,7 +375,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C683F6721EF24C000E54958 /* CustomCollectionCell.xib in Resources */,
 				5C683F4121EF234600E54958 /* LaunchScreen.storyboard in Resources */,
 				5C683F3E21EF234600E54958 /* Assets.xcassets in Resources */,
 				5C683F3C21EF234400E54958 /* Main.storyboard in Resources */,
@@ -417,15 +443,11 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -457,15 +479,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2384302208B944003D4762 /* PinterestLayout.swift in Sources */,
 				5C683F6F21EF475500E54958 /* ApiClient.swift in Sources */,
 				5C683F3921EF234400E54958 /* ViewController.swift in Sources */,
 				BBFF629C21F3768F00972B9F /* Connectivity.swift in Sources */,
 				5C683F3721EF234400E54958 /* AppDelegate.swift in Sources */,
+				BB2384312208B944003D4762 /* PinterestLayoutDelegate.swift in Sources */,
+				BB23842F2208B944003D4762 /* PinterestLayoutAttributes.swift in Sources */,
 				5C683F6B21EF307600E54958 /* VC_Extension+DataSource.swift in Sources */,
 				BBFF629E21F377FC00972B9F /* Extensions.swift in Sources */,
+				BB2384292208B937003D4762 /* PinterestCell.swift in Sources */,
 				5C683F6921EF25CF00E54958 /* ViewModel.swift in Sources */,
 				5C683F6D21EF328000E54958 /* GlobalConstants.swift in Sources */,
-				5C683F6621EF24C000E54958 /* CustomCollectionCell.swift in Sources */,
 				BB51990C21EFA1E7004C83D4 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2384332208B9C5003D4762 /* APITest.swift in Sources */,
 				5C683F4C21EF234600E54958 /* SampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +671,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62C932SF5R;
 				INFOPLIST_FILE = Sample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -664,6 +691,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62C932SF5R;
 				INFOPLIST_FILE = Sample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

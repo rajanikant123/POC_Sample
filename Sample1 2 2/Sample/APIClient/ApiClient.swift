@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 class ApiClient: NSObject {
     static let sharedInstance = ApiClient()
@@ -16,6 +15,9 @@ class ApiClient: NSObject {
         
     }
     
+    /**
+     Get API  Call.
+     */
     func fetApiRequest(url : String, completion:@escaping ( Model) -> () ) {
         
         
@@ -24,10 +26,13 @@ class ApiClient: NSObject {
             .responseString { (jsonData) in
                 
                 do {
-                    let data = Data((jsonData.result.value?.utf8)!)
-                    let jsonDecoder = JSONDecoder()
-                    let responseModel = try jsonDecoder.decode(Model.self, from: data)
-                    completion(responseModel)
+                    
+                    if let value = jsonData.result.value {
+                        let data = Data(value.utf8)
+                        let jsonDecoder = JSONDecoder()
+                        let responseModel = try jsonDecoder.decode(Model.self, from: data)
+                        completion(responseModel)
+                    }
                     
                 }
                 catch{
@@ -38,6 +43,7 @@ class ApiClient: NSObject {
         
     }
     
-
+    
     
 }
+

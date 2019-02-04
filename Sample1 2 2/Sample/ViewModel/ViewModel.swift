@@ -11,7 +11,9 @@ import UIKit
 class ViewModel: NSObject {
 
     var model : Model?
-    
+    /**
+     Get list API call.
+     */
     func getList(completion: @escaping () -> Void) {
         
         ApiClient.sharedInstance.fetApiRequest(url: url) { (result) in

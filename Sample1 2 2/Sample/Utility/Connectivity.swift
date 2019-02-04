@@ -10,7 +10,15 @@ import Foundation
 import Alamofire
 
 class Connectivity {
+    
+    /**
+     NetworkConnectivity Check.
+     */
     class func isConnectedToInternet() ->Bool {
-        return NetworkReachabilityManager()!.isReachable
+        if let manager = NetworkReachabilityManager() {
+            return manager.isReachable
+        }else {
+            return false
+        }
     }
 }
